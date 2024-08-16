@@ -2,6 +2,8 @@
 
 
 def answer(arr):
+
+    # ------------ Binary Search -------------- #
     arr.sort()
 
     for i, num in enumerate(arr):
@@ -21,6 +23,22 @@ def answer(arr):
                 l = m + 1
 
     return False
+
+    # --------------- Hash Table ----------------- #
+    # arr.sort()
+    # seen = {}
+
+    # for idx, num in enumerate(arr):
+    #     goal1 = num / 2
+    #     goal2 = num * 2
+    #     if (goal1 in seen and seen[goal1] != idx) or (
+    #         goal2 in seen and seen[goal2] != idx
+    #     ):
+    #         return True
+    #     else:
+    #         seen[num] = idx
+
+    # return False
 
 
 if __name__ == "__main__":
