@@ -6,7 +6,7 @@ def answer(s: str):
 
     def backtrack(remStr, subStr):
         if len(remStr) == 0:
-            res.append(subStr.copy())
+            res.append(subStr)
             return
         else:
             for i in range(1, len(remStr) + 1):
