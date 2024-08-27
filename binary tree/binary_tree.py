@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -22,3 +25,27 @@ def to_binary_tree(items):
             node.right = TreeNode(val)
             q.append(node.right)
     return root
+
+
+def print_tree_as_list(root):
+    if not root:
+        print("[]")
+        return
+
+    result = []
+    q = deque([root])
+
+    while q:
+        node = q.popleft()
+        if node:
+            result.append(node.val)
+            q.append(node.left)
+            q.append(node.right)
+        else:
+            result.append(None)
+
+    # Remove trailing None values to avoid unnecessary nulls at the end
+    while result and result[-1] is None:
+        result.pop()
+
+    print(result)
